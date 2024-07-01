@@ -1,7 +1,7 @@
 // this is the starting point of your app\
 import dotenv from "dotenv"
 import express from  "express"
-import helloRoute from "./routes/route";
+import helloRoute from "./routes/route.js";
 
 
 dotenv.config();
