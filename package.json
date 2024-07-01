@@ -9,6 +9,9 @@
   },
   "type": "module",
   "dependencies": {
-    "init": "^0.1.2"
+    "express": "^4.19.2",
+    "init": "^0.1.2",
+    "ipify": "^6.0.0",
+    "openweathermap": "^1.0.0"
   }
 }
