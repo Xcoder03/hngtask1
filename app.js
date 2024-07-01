@@ -1,4 +1,4 @@
-// this is the starting point of your app\
+// this is the starting point of your app
 import dotenv from "dotenv"
 import express from  "express"
 import helloRoute from "./routes/route.js";
