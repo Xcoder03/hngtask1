@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 
 const PORT = process.env.PORT || 8080;
-// app.use("/api/v1/label", labelRoutes)
+app.use("/api/v1/hello", labelRoutes)
 // app.use("/api/v1/tasks", taskRoutes)
 
 

@@ -1,5 +1,5 @@
-import ipify from ipify
-import openweathermap  from openweathermap
+import ipify from 'ipify'
+import openweathermap  from 'openweathermap'
 
 export class HelloController {
     async getHello(req, res) {
