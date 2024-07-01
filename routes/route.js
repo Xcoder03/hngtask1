@@ -1,6 +1,8 @@
 import express from 'express'
 import { helloController } from '../controllers/hello.js'
-const userRoutes = express.Router();
+const helloRoute = express.Router();
+
+helloRoute.get("/hello", helloController)
 
 
 

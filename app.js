@@ -1,6 +1,7 @@
 // this is the starting point of your app\
 import dotenv from "dotenv"
 import express from  "express"
+import helloRoute from "./routes/route";
 
 
 dotenv.config();
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 
 
 const PORT = process.env.PORT || 8080;
-app.use("/api/v1/hello", labelRoutes)
+app.use("/api", helloRoute)
 // app.use("/api/v1/tasks", taskRoutes)
 
 
