@@ -1,6 +1,7 @@
-const express = require("express");
-import helloRoute from "../routes/route.js";
+import express from  "express"
+
 const app = express();
+import helloRoute from "../routes/route.js";
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
