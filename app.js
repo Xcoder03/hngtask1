@@ -1,9 +1,10 @@
 // this is the starting point of your app
 import express from  "express"
 import helloRoute from "./routes/route.js";
+import { configDotenv } from "dotenv";
 
 
-
+configDotenv
 const app = express();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -16,7 +17,7 @@ app.get("/", (req, res) => {
 
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = 3000;
 app.use("/api", helloRoute)
 // app.use("/api/v1/tasks", taskRoutes)
 
