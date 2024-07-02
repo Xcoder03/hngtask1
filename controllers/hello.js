@@ -3,7 +3,7 @@ import openweathermap  from "openweathermap"
 
 
 
-  export const helloController  = async(req, res) => {
+  export const helloController  = async(req, res, next) => {
       try {
         const visitorName = req.query.visitor_name;
         const ip = req.ip;
