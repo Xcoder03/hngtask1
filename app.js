@@ -1,10 +1,9 @@
 // this is the starting point of your app
-import dotenv from "dotenv"
 import express from  "express"
 import helloRoute from "./routes/route.js";
 
 
-dotenv.config();
+
 const app = express();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');

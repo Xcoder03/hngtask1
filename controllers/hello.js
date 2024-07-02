@@ -1,5 +1,5 @@
-import ipify from 'ipify'
-import openweathermap  from 'openweathermap'
+import ipify from "ipify"
+import openweathermap  from "openweathermap"
 
 
 
