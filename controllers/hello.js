@@ -10,7 +10,7 @@ export const helloController = async (req, res, next) => {
   try {
     const geoapifyApiKey = process.env.GEOAPIFY_API_KEY;
     const openWeatherMapApiKey = process.env.OPENWEATHERMAP_API_KEY;
-    const ip = req.ip; // Use a test IP address for demonstration. Replace with req.ip for actual use.
+    const ip = "8.8.8.8"; // Use a test IP address for demonstration. Replace with req.ip for actual use.
 
     if (!geoapifyApiKey || !openWeatherMapApiKey) {
       throw new Error('API keys are not defined');
