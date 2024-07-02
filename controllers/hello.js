@@ -18,7 +18,8 @@ export const helloController = async (req, res, next) => {
   try {
     const geoapifyApiKey = process.env.GEOAPIFY_API_KEY;
     const openWeatherMapApiKey = process.env.OPENWEATHERMAP_API_KEY;
-    const ip = getClientIp(req) 
+    const visitorName = req.query.visitor_name
+    const ip = getClientIp(req)
     console.log(ip)
 
     if (!geoapifyApiKey || !openWeatherMapApiKey) {
@@ -49,7 +50,7 @@ export const helloController = async (req, res, next) => {
     const weatherDescription = weatherData.weather[0].description;
     const temperature = weatherData.main.temp;
 
-    const greeting = `Hello, visitor from ${city}, ${country}! The weather is ${weatherDescription} with a temperature of ${temperature}°C.`;
+    const greeting = `Hello, ${visitorName} from ${city}, ${country}! The weather is ${weatherDescription} with a temperature of ${temperature}°C.`;
 
     res.json({ greeting });
   } catch (error) {
