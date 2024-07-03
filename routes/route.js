@@ -3,6 +3,6 @@ import { helloController } from '../controllers/hello.js';
 
 const helloRoute = express.Router();
 
-helloRoute.get('/hello', helloController);
+helloRoute.get('/api/hello', helloController);
 
 export default helloRoute;
