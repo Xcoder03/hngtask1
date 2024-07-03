@@ -1,5 +1,5 @@
 import express from 'express';
-import helloRoute from '../routes/helloRoute.js';
+import helloRoute from '../routes/route.js';
 
 const app = express();
 
