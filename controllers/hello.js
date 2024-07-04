@@ -82,9 +82,9 @@ export const helloController = async (req, res) => {
     const weatherDescription = weatherData.weather[0].description;
     const temperature = weatherData.main.temp;
 
-    const greeting = `client_ip: ${ip}, location: ${city}, greeting: Hello, ${visitorName}!, the temperature is ${temperature}degree Celcius in ${city}`;
+    const response = `"client_ip": "${ip}", "location": "${city}", "greeting": "Hello, ${visitorName}!, the temperature is ${temperature} degrees Celcius in ${city}"`;
 
-    res.json({ greeting });
+    res.json({ response });
   } catch (error) {
     console.error('Error fetching geolocation or weather data:', error.message);
     res.status(500).json({ error: error.message });
