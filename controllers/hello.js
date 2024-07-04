@@ -82,7 +82,11 @@ export const helloController = async (req, res) => {
     const weatherDescription = weatherData.weather[0].description;
     const temperature = weatherData.main.temp;
 
-    const response = `"client_ip": "${ip}", "location": "${city}", "greeting": "Hello, ${visitorName}!, the temperature is ${temperature} degrees Celcius in ${city}"`;
+    const response = {
+      client_ip: ip,
+      location: city,
+      greeting: `Hello, ${visitorName}!, the temperature is ${temperature} degrees Celcius in ${city}`
+    };
 
     res.json({ response });
   } catch (error) {
