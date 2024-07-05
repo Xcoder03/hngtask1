@@ -31,7 +31,7 @@ export const helloController = async (req, res) => {
     const geoResponse = await axios.get(`https://api.geoapify.com/v1/ipinfo`, {
       params: {
         apiKey: geoapifyApiKey,
-        client_ip: ip
+        ip: ip
       }
     });
 
