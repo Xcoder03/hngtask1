@@ -3,22 +3,23 @@ import axios from 'axios';
 
 dotenv.config();
 
-function getClientIp(req) {
-  const forwarded = req.headers['x-forwarded-for'];
-  const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
+// function getClientIp(req) {
+//   const forwarded = req.headers['x-forwarded-for'];
+//   const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress;
 
-  if (ip && ip.startsWith('::ffff:')) {
-    return ip.split(':').pop(); // Convert IPv6 to IPv4
-  }
-  return ip;
-}
+//   if (ip && ip.startsWith('::ffff:')) {
+//     return ip.split(':').pop(); // Convert IPv6 to IPv4
+//   }
+//   return ip;
+// }
 
 export const helloController = async (req, res) => {
   try {
     const geoapifyApiKey = process.env.GEOAPIFY_API_KEY;
     const openWeatherMapApiKey = process.env.OPENWEATHERMAP_API_KEY;
     const visitorName = req.query.visitor_name
-    let ip = getClientIp(req);
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '8.8.8.8'; // Default to a public IP if on localhost
+
 
     if (!geoapifyApiKey || !openWeatherMapApiKey) {
       throw new Error('API keys are not defined');
