@@ -18,8 +18,8 @@ export const helloController = async (req, res) => {
     const geoapifyApiKey = process.env.GEOAPIFY_API_KEY;
     const openWeatherMapApiKey = process.env.OPENWEATHERMAP_API_KEY;
     const visitorName = req.query.visitor_name
-    const ip = req.headers['x-forwarded-for']  || 'ip not available '  // Default to a public IP if on localhost
-
+    // const ip = req.headers['x-forwarded-for']  || 'ip not available '  // Default to a public IP if on localhost
+    const ip = req.ip
 
     if (!geoapifyApiKey || !openWeatherMapApiKey) {
       throw new Error('API keys are not defined');
